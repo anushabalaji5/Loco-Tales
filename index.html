@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loco Tales - Discover Your City's Hidden Gems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="animated-header">
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <span class="logo-icon"><i class="fas fa-map-marked-alt"></i></span>
+          <h1>Loco Tales</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#explore">Explore</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h2 class="animated-text">Discover Your City's Hidden Gems</h2>
+        <p class="subtitle">Explore the best attractions, restaurants, hotels, museums, and beaches in your area</p>
+        <div class="search-container">
+          <div class="search-box">
+            <select id="category-select">
+              <option value="">All Categories</option>
+              <option value="attraction">Attractions</option>
+              <option value="restaurant">Restaurants</option>
+              <option value="hotel">Hotels</option>
+              <option value="museum">Museums</option>
+              <option value="beach">Beaches</option>
+            </select>
+            <input type="text" id="location-input" placeholder="Enter city or district..."/>
+            <button id="search-btn"><i class="fas fa-search" id="explore"></i> Explore</button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="floating-elements">
+          <div class="floating-icon icon1"><i class="fas fa-utensils"></i></div>
+          <div class="floating-icon icon2"><i class="fas fa-umbrella-beach"></i></div>
+          <div class="floating-icon icon3"><i class="fas fa-landmark"></i></div>
+          <div class="floating-icon icon4"><i class="fas fa-hotel"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="explore" class="places-section">
+      <div class="container">
+        <h2>Popular Places</h2>
+        <div class="category-tabs">
+          <button class="tab-btn active" data-category="all">All</button>
+          <button class="tab-btn" data-category="attraction">Attractions</button>
+          <button class="tab-btn" data-category="restaurant">Restaurants</button>
+          <button class="tab-btn" data-category="hotel">Hotels</button>
+          <button class="tab-btn" data-category="museum">Museums</button>
+          <button class="tab-btn" data-category="beach">Beaches</button>
+        </div>
+        <div id="places-container" class="places-grid"></div>
+        <div class="loading-spinner" id="loading-spinner">
+          <div class="spinner"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hidden map for marker placement -->
+    <div id="map" class="hidden-map"></div>
+
+    <section class="feature-section" id="about">
+      <div class="container">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+          <h3>Interactive Guide</h3>
+          <p>Discover locations with detailed information and directions to each place.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-volume-up"></i></div>
+          <h3>Audio Guides</h3>
+          <p>Listen to fascinating stories and histories about each location.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-star"></i></div>
+          <h3>Local Insights</h3>
+          <p>Discover hidden gems recommended by locals and frequent visitors.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" id="contact">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Loco Tales</h3>
+          <p>Your ultimate guide to exploring cities like a local. Discover the stories behind every corner.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="/contact.html"><i class="fab fa-facebook"></i></a>
+            <a href="/contact.html"><i class="fab fa-twitter"></i></a>
+            <a href="/contact.html"><i class="fab fa-instagram"></i></a>
+            <a href="/contact.html"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Loco Tales. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="place-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2 id="modal-place-name"></h2>
+        <div class="place-rating" id="modal-place-rating"></div>
+      </div>
+      <div class="modal-body">
+        <div class="place-image-container">
+          <img id="modal-place-image" src="" alt="Place image"/>
+        </div>
+        <div class="place-details">
+          <p id="modal-place-description"></p>
+          <div class="place-info">
+            <p><i class="fas fa-map-marker-alt"></i> <span id="modal-place-address"></span></p>
+            <p><i class="fas fa-phone"></i> <span id="modal-place-phone"></span></p>
+            <p><i class="fas fa-globe"></i> <a id="modal-place-website" href="#" target="_blank">Website</a></p>
+          </div>
+          <div class="audio-guide">
+            <h3>Audio Guide</h3>
+            <p>Listen to the story of this place:</p>
+            <div class="audio-player">
+              <audio id="place-audio" controls>Your browser does not support the audio element.</audio>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <a id="directions-btn" class="action-btn" target="_blank"><i class="fas fa-directions"></i> Get Directions</a>
+            <button id="play-audio-btn" class="action-btn"><i class="fas fa-redo"></i> Listen Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
