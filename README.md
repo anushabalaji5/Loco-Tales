@@ -1,9 +1,7 @@
-# Loco-Tales
-Here's a professional, clean `README.md` content for your **Local Guide Website project**, which includes all essential sections:
-
----
-
 ## 📍 Loco Tales – Discover Your City's Hidden Gems
+
+## Demo video🎥 Link: https://youtu.be/dCWznoglEak?si=LuLeCvqRlzrlGTwp
+##Live Website 🔗: https://anushabalaji5.github.io/Loco-Tales/
 
 A local guide web application built with HTML, CSS, and JavaScript that helps users discover popular places like attractions, beaches, hotels, museums, and restaurants in any Indian city. The app includes Wikipedia-powered descriptions, audio narration, and Google Maps integration.
 
