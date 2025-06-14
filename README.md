@@ -29,7 +29,7 @@ A local guide web application built with HTML, CSS, and JavaScript that helps us
 ├── index.html              # Main home page
 ├── styles.css              # All styles and responsive design
 ├── script.js               # All functionality (API, fetch, TTS, map)
-├── social-unavailable.html # Placeholder for inactive social links
+├── contact.html # Placeholder for inactive social links
 └── assets/ (optional)      # Future images or icons
 ```
 
